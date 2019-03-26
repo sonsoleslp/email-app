@@ -1,8 +1,329 @@
+/* --------- COLORS ---------*/
+/* --------- TYPOGRAPHY ---------*/
+/* --------- MIXINS---------*/
+/* --------- GENERAL ---------*/
+* {
+  box-sizing: border-box;
+  margin: 0 auto; }
+  *::selection {
+    background-color: #bbe6d8; }
+  *:focus {
+    outline: none; }
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  color: #292F33;
+  background-color: white; }
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  height: 100vh; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
 
 a {
-  color: #00B7FF; }
+  color: #00B7FF;
+  text-decoration: none;
+  margin: 0; }
+
+h1 {
+  color: blue; }
+
+h2 {
+  font-size: .9rem;
+  font-weight: 500;
+  margin: 0; }
+
+h3 {
+  font-size: .9rem;
+  font-weight: 500; }
+
+.button1 {
+  background: #B31829;
+  border: none;
+  color: white;
+  box-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  text-align: center;
+  padding: .5rem 1.2rem .5rem 1.2rem;
+  font-size: .8rem;
+  cursor: pointer; }
+
+input {
+  border-radius: 20px;
+  border: solid 0.5px #BCC8D1;
+  -webkit-box-shadow: inset 1px 1px 3px 0px rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: inset 1px 1px 3px 0px rgba(0, 0, 0, 0.16);
+  box-shadow: inset 1px 1px 3px 0px rgba(0, 0, 0, 0.16); }
+
+/* --------- LOGIN ---------*/
+.login {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+  padding: 9rem; }
+  .login .logo {
+    width: 18rem;
+    margin: 0 0 3rem 0; }
+    .login .logo img {
+      object-fit: contain;
+      width: 100%;
+      height: 100%; }
+  .login form {
+    margin: 0;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center; }
+    .login form .form-field {
+      display: flex;
+      flex-flow: column wrap; }
+      .login form .form-field label {
+        margin: 1.3rem 0 .5rem 0;
+        padding: 0 0 0 .5rem;
+        font-weight: 500;
+        font-size: .8rem; }
+      .login form .form-field input {
+        width: 20rem;
+        padding: .3rem .8rem .3rem .8rem; }
+    .login form button {
+      margin: 1.8rem 7rem 0 7rem; }
+      .login form button:hover {
+        background-color: #9d1524; }
+
+/* --------- col1 ---------*/
+.col1 {
+  width: 20%;
+  padding: 1rem .5rem 0 0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  border-right: solid 1.2px #ced7dd; }
+  .col1 .top1 {
+    width: 100%;
+    padding: 0 0 0 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center; }
+    .col1 .top1 .menu1 {
+      width: 20%;
+      margin: 0; }
+      .col1 .top1 .menu1 .fas {
+        font-size: 1.1rem;
+        color: #BCC8D1; }
+    .col1 .top1 .logo1 {
+      width: 6rem;
+      margin: 0; }
+      .col1 .top1 .logo1 img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%; }
+  .col1 .user1 {
+    width: 100%;
+    padding: 0 0 0 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center; }
+    .col1 .user1 .picture1 {
+      margin: 0;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%; }
+      .col1 .user1 .picture1 img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit; }
+    .col1 .user1 .user_info {
+      width: 70%;
+      margin: 0 0 0 .8rem; }
+      .col1 .user1 .user_info .name1 {
+        display: flex;
+        align-items: center; }
+        .col1 .user1 .user_info .name1 .fas {
+          color: #BCC8D1; }
+  .col1 .actions1 {
+    width: 100%;
+    font-size: .8rem;
+    font-weight: 500;
+    padding: 0 2rem 0 0; }
+    .col1 .actions1 li {
+      width: 100%;
+      padding: .5rem 1rem .5rem 3rem;
+      border-radius: 0 2rem 2rem 0;
+      cursor: pointer; }
+      .col1 .actions1 li span {
+        float: right; }
+      .col1 .actions1 li i {
+        margin-right: .9rem; }
+      .col1 .actions1 li:hover {
+        background-color: #e3e8ec;
+        font-weight: 700;
+        transition: 0.3s; }
+    .col1 .actions1 .a1_selected {
+      background-color: #f6bbc1;
+      color: #B31829;
+      font-weight: 700; }
+      .col1 .actions1 .a1_selected:hover {
+        background-color: #f9d1d6;
+        font-weight: 700; }
+  .col1 .contacts {
+    width: 100%;
+    overflow: auto;
+    height: 270px;
+    padding: 1rem;
+    margin-bottom: 1rem; }
+    .col1 .contacts .contact {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      cursor: pointer;
+      padding: .6rem;
+      margin: .2rem 0 .2rem 0; }
+      .col1 .contacts .contact:hover {
+        background-color: #e3e8ec; }
+      .col1 .contacts .contact .picture2 {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%; }
+        .col1 .contacts .contact .picture2 img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          border-radius: inherit; }
+      .col1 .contacts .contact .contact_info {
+        width: 70%;
+        margin: 0; }
+        .col1 .contacts .contact .contact_info .name2 {
+          display: flex;
+          align-items: center;
+          font-size: .8rem;
+          font-weight: 500; }
+          .col1 .contacts .contact .contact_info .name2 span {
+            border-radius: 50%;
+            width: 9px;
+            height: 9px; }
+          .col1 .contacts .contact .contact_info .name2 .online {
+            background-color: #1CD99C; }
+          .col1 .contacts .contact .contact_info .name2 .offline {
+            background-color: #FAFF00; }
+        .col1 .contacts .contact .contact_info .mail2 {
+          color: #8896a0;
+          padding: .2rem 0 0 0; }
+
+/* --------- col2 ---------*/
+.col2 {
+  width: 30%;
+  margin: 0;
+  border-right: solid 1.2px #ced7dd; }
+  .col2 .col2_top {
+    border-bottom: solid 0.5px #BCC8D1;
+    padding: 0 0 1.4rem 0; }
+    .col2 .col2_top .searchbar {
+      width: 100%;
+      display: flex;
+      margin: 1.5rem 0 0 0; }
+      .col2 .col2_top .searchbar input {
+        width: 80%;
+        padding: .4rem 1rem .4rem 1rem; }
+    .col2 .col2_top .icons {
+      width: 100%;
+      padding: 1.7rem 0 0 1.5rem; }
+      .col2 .col2_top .icons i {
+        margin: 0 1rem 0 0;
+        padding: .5rem;
+        border-radius: 50%;
+        font-size: .8rem;
+        cursor: pointer; }
+        .col2 .col2_top .icons i:hover {
+          background-color: #e3e8ec; }
+  .col2 .email_list {
+    height: 610px;
+    flex-flow: column wrap;
+    overflow: auto;
+    margin: 0 .3rem 0 0; }
+    .col2 .email_list .email {
+      border-bottom: solid 0.5px #BCC8D1;
+      padding: .6rem .8rem 1rem .6rem; }
+      .col2 .email_list .email .email_header {
+        display: flex;
+        flex-flow: row wrap;
+        color: #292F33;
+        font-size: .6rem;
+        font-weight: 500; }
+        .col2 .email_list .email .email_header .name {
+          width: 50%; }
+        .col2 .email_list .email .email_header .date {
+          width: 50%;
+          text-align: right; }
+      .col2 .email_list .email .email_main {
+        display: flex;
+        flex-flow: row wrap;
+        margin: .6rem 0 0 0;
+        color: #292F33; }
+        .col2 .email_list .email .email_main .email_actions {
+          width: 12%;
+          display: flex;
+          color: #c1c8cd; }
+        .col2 .email_list .email .email_main .email_content {
+          width: 80%; }
+          .col2 .email_list .email .email_main .email_content .issue {
+            font-weight: 600;
+            font-size: .8rem; }
+          .col2 .email_list .email .email_main .email_content .description {
+            margin: .2rem;
+            color: #6d7d88; }
+        .col2 .email_list .email .email_main .documents {
+          width: 100%;
+          margin: .7rem 0 0 0; }
+          .col2 .email_list .email .email_main .documents .document {
+            margin: 0;
+            padding: .2rem;
+            width: 30%;
+            border: solid 0.5px #BCC8D1;
+            border-radius: 20px;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center; }
+            .col2 .email_list .email .email_main .documents .document .icon {
+              background-color: orange;
+              border-radius: 50%;
+              height: 13px;
+              width: 13px; }
+      .col2 .email_list .email:hover {
+        box-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.4);
+        background-color: #f8fafb; }
+
+/* --------- col3 ---------*/
+.col3 {
+  width: 50%;
+  background-color: #BCC8D1; }
+
+/* --------- SCROLLBAR ---------*/
+::-webkit-scrollbar {
+  width: 10px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+  -webkit-box-shadow: inset 1px 1px 5px 2px rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: inset 1px 1px 5px 2px rgba(0, 0, 0, 0.16);
+  box-shadow: inset 1px 1px 5px 2px rgba(0, 0, 0, 0.16);
+  border-radius: 5px; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #BCC8D1;
+  border-radius: 5px; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #9eafbc; }
 
 /*# sourceMappingURL=style.css.map */

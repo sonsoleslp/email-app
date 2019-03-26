@@ -1,7 +1,7 @@
 var profile = {
-	name: "Dr. Científico",
+	name: "Gabriel Rivas",
 	email: "dr@upm.es",
-	photo: "ksdfsdflñk"
+	photo: "https://loremflickr.com/320/240?lock=1"
 }
 
 module.exports = profile;

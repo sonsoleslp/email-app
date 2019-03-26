@@ -1,6 +1,362 @@
+/* --------- COLORS ---------*/
+$primary-color: #B31829
+$secundary-color: #BCC8D1
+$yellow: #FAFF00
+$green: #1CD99C
+$typecolor: #292F33
+$contrast-color: #95D9C3
+$background: white
+
+/* --------- TYPOGRAPHY ---------*/
+$typeface: 'Roboto', sans-serif
+
+
+/* --------- MIXINS---------*/
+=img
+  img
+    object-fit: contain
+    width: 100%
+    height: 100%
+
+=profile1
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  img
+    object-fit: cover
+    width: 100%
+    height: 100%
+    border-radius: inherit
+
+=profile2
+  width: 40px
+  height: 40px
+  border-radius: 50%
+  img
+    object-fit: cover
+    width: 100%
+    height: 100%
+    border-radius: inherit
+
+
+/* --------- GENERAL ---------*/
+*
+  //border: solid 1px pink
+  box-sizing: border-box
+  margin: 0 auto
+  &::selection
+    background-color: lighten($contrast-color, 10)
+  &:focus
+    outline: none
+
 body
-  padding: 50px
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
-  
+  font-family: $typeface
+  font-size: 13px
+  color: $typecolor
+  background-color: $background
+
+.wrapper
+  display: flex
+  flex-flow: row wrap
+  height: 100vh
+
+ul
+  list-style: none
+  margin: 0
+  padding: 0
+
 a
   color: #00B7FF
+  text-decoration: none
+  margin: 0
+
+h1
+  color: blue
+
+h2
+  font-size: .9rem
+  font-weight: 500
+  margin: 0
+
+h3
+  font-size: .9rem
+  font-weight: 500
+
+.button1
+  background: $primary-color
+  border: none
+  color: white
+  box-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.4)
+  border-radius: 20px
+  text-align: center
+  padding: .5rem 1.2rem .5rem 1.2rem
+  font-size: .8rem
+  cursor: pointer
+
+input
+  border-radius: 20px
+  border: solid .5px $secundary-color
+  -webkit-box-shadow: inset 1px 1px 3px 0px rgba(0,0,0,0.16)
+  -moz-box-shadow: inset 1px 1px 3px 0px rgba(0,0,0,0.16)
+  box-shadow: inset 1px 1px 3px 0px rgba(0,0,0,0.16)
+
+/* --------- LOGIN ---------*/
+
+.login
+  display: flex
+  flex-flow: column wrap
+  justify-content: center
+  align-content: center
+  padding: 9rem
+  .logo
+    width: 18rem
+    margin: 0 0 3rem 0
+    +img
+  form
+    margin: 0
+    display: flex
+    flex-flow: column wrap
+    justify-content: center
+
+    .form-field
+      display: flex
+      flex-flow: column wrap
+      label
+        margin: 1.3rem 0 .5rem 0
+        padding: 0 0 0 .5rem
+        font-weight: 500
+        font-size: .8rem
+      input
+        width: 20rem
+        padding: .3rem .8rem .3rem .8rem
+    button
+      margin: 1.8rem 7rem 0 7rem
+      &:hover
+        background-color: darken($primary-color, 5)
+
+
+/* --------- col1 ---------*/
+.col1
+  width: 20%
+  padding: 1rem .5rem 0 0
+  display: flex
+  flex-flow: column wrap
+  justify-content: space-between
+  border-right: solid 1.2px lighten($secundary-color, 6)
+
+  .top1
+    width: 100%
+    padding: 0 0 0 1rem
+    display: flex
+    flex-flow: row wrap
+    justify-content: flex-start
+    align-items: center
+
+    .menu1
+      width: 20%
+      margin: 0
+      .fas
+        font-size: 1.1rem
+        color: $secundary-color
+    .logo1
+      width: 6rem
+      margin: 0
+      +img
+
+
+  .user1
+    width: 100%
+    padding: 0 0 0 2rem
+    display: flex
+    flex-flow: row wrap
+    align-items: center
+
+    .picture1
+      margin: 0
+      +profile1
+    .user_info
+      width: 70%
+      margin: 0 0 0 .8rem
+      .name1
+        display: flex
+        align-items: center
+        .fas
+          color: $secundary-color
+      .mail1
+
+  .actions1
+    width: 100%
+    font-size: .8rem
+    font-weight: 500
+    padding: 0 2rem 0 0
+    li
+      width: 100%
+      padding: .5rem 1rem .5rem 3rem
+      border-radius: 0 2rem 2rem 0
+      cursor: pointer
+      span
+        float: right
+      i
+        margin-right: .9rem
+      &:hover
+        background-color: lighten($secundary-color, 13)
+        font-weight: 700
+        transition: 0.3s
+
+    .a1_selected
+      background-color: lighten($primary-color, 45)
+      color: $primary-color
+      font-weight: 700
+      &:hover
+        background-color: lighten($primary-color, 50)
+        font-weight: 700
+
+  .contacts
+    width: 100%
+    overflow: auto
+    height: 270px
+    padding: 1rem
+    margin-bottom: 1rem
+
+    .contact
+      display: flex
+      flex-flow: row wrap
+      align-items: center
+      cursor: pointer
+      padding: .6rem
+      margin: .2rem 0 .2rem 0
+      &:hover
+        background-color: lighten($secundary-color, 13)
+
+      .picture2
+        +profile2
+      .contact_info
+        width: 70%
+        margin: 0
+        .name2
+          display: flex
+          align-items: center
+          font-size: .8rem
+          font-weight: 500
+          span
+            border-radius: 50%
+            width: 9px
+            height: 9px
+          .online
+            background-color: $green
+          .offline
+            background-color: $yellow
+        .mail2
+          color: lighten($typecolor, 40)
+          padding: .2rem 0 0 0
+
+
+/* --------- col2 ---------*/
+.col2
+  width: 30%
+  margin: 0
+  border-right: solid 1.2px lighten($secundary-color, 6)
+  .col2_top
+    border-bottom: solid .5px $secundary-color
+    padding: 0 0 1.4rem 0
+    .searchbar
+      width: 100%
+      display: flex
+      margin: 1.5rem 0 0 0
+      input
+        width: 80%
+        padding: .4rem 1rem .4rem 1rem
+    .icons
+      width: 100%
+      padding: 1.7rem 0 0 1.5rem
+      i
+        margin: 0 1rem 0 0
+        padding: .5rem
+        border-radius: 50%
+        font-size: .8rem
+        cursor: pointer
+        &:hover
+          background-color: lighten($secundary-color, 13)
+  .email_list
+    height: 610px
+    flex-flow: column wrap
+    overflow: auto
+    margin: 0 .3rem 0 0
+    .email
+      border-bottom: solid .5px $secundary-color
+      padding: .6rem .8rem 1rem .6rem
+      .email_header
+        display: flex
+        flex-flow: row wrap
+        color: $typecolor
+        font-size: .6rem
+        font-weight: 500
+        .name
+          width: 50%
+        .date
+          width: 50%
+          text-align: right
+      .email_main
+        display: flex
+        flex-flow: row wrap
+        margin: .6rem 0 0 0
+        color: $typecolor
+        .email_actions
+          width: 12%
+          display: flex
+          color: lighten($typecolor, 60)
+
+        .email_content
+          width: 80%
+          .issue
+            font-weight: 600
+            font-size: .8rem
+          .description
+            margin: .2rem
+            color: lighten($typecolor, 30)
+        .documents
+          width: 100%
+          margin: .7rem 0 0 0
+          .document
+            margin: 0
+            padding: .2rem
+            width: 30%
+            border: solid .5px $secundary-color
+            border-radius: 20px
+            display: flex
+            flex-flow: row wrap
+            align-items: center
+            .icon
+              background-color: orange
+              border-radius: 50%
+              height: 13px
+              width: 13px
+      &:hover
+        box-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.4)
+        background-color: lighten($secundary-color, 20)
+
+
+/* --------- col3 ---------*/
+.col3
+  width: 50%
+  background-color: $secundary-color
+
+/* --------- SCROLLBAR ---------*/
+::-webkit-scrollbar
+  width: 10px
+
+/* Track */
+::-webkit-scrollbar-track
+  background: $background
+  -webkit-box-shadow: inset 1px 1px 5px 2px rgba(0,0,0,0.16)
+  -moz-box-shadow: inset 1px 1px 5px 2px rgba(0,0,0,0.16)
+  box-shadow: inset 1px 1px 5px 2px rgba(0,0,0,0.16)
+  border-radius: 5px
+/* Handle */
+::-webkit-scrollbar-thumb
+  background: $secundary-color
+  border-radius: 5px
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover
+  background: darken($secundary-color, 10)

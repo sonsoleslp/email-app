@@ -1,27 +1,154 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <h2><%=profile.name%></h2>
-    <div>
-	    <ul>
-	    <% for (var e in emails) { 
-	    	var email = emails[e];%> 
-	    	<li class="email-item <%= e == locals.id ? 'selected':''%>""><a href="/mail/<%=e%>"><%= email.from %></a></li>
-	    <% } %>
-	    </ul>
-    </div>
 
-    <div>
-    <% if (locals.id !== undefined) {%>
-    	<%- emails[locals.id].content %>
-    <% } else { %>
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="col1">
+      <div class="top1">
+        <div class="menu1"><i class="fas fa-bars"></i></div>
+        <div class="logo1"><img src="../images/logos/csic.png" alt="logo"></div>
+      </div>
+      <div class="user1">
+        <div class="picture1"><img src="<%=profile.photo%>" alt="<%=profile.name%>"></div>
+        <div class="user_info">
+          <div class="name1">
+            <h2><%=profile.name%></h2><i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="mail1"><%=profile.email%></div>
+        </div>
+      </div>
+      <!--/user1-->
+      <div class="button1">Redactar</div>
+      <div class="actions1">
+        <ul>
+          <li class="a1_selected"><i class="fas fa-inbox"></i>Recibidos <span>9</span></li>
+          <li><i class="fas fa-star"></i>Destacados</li>
+          <li><i class="far fa-clock"></i>Pospuestos</li>
+          <li><i class="fas fa-exclamation-circle"></i>Importantes</li>
+          <li><i class="far fa-paper-plane"></i>Enviados</li>
+          <li><i class="far fa-file"></i>Borradores<span>2</span></li>
+        </ul>
+      </div>
+      <!--/actions1-->
+
+      <div class="contacts">
+        <div class="contact">
+          <div class="picture2"><img src="<%=profile.photo%>" alt="<%=profile.name%>"></div>
+          <div class="contact_info">
+            <div class="name2">Contacto 1<span class="online"></span></div>
+            <div class="mail2">Bla b la bla bla ...</div>
+          </div>
+        </div>
+        <!--/contact-->
+
+        <div class="contact">
+          <div class="picture2"><img src="<%=profile.photo%>" alt="<%=profile.name%>"></div>
+          <div class="contact_info">
+            <div class="name2">Contacto 1<span class=""></span></div>
+            <div class="mail2">Bla b la bla bla ...</div>
+          </div>
+        </div>
+        <!--/contact-->
+
+        <div class="contact">
+          <div class="picture2"><img src="<%=profile.photo%>" alt="<%=profile.name%>"></div>
+          <div class="contact_info">
+            <div class="name2">Contacto 1<span class="online"></span></div>
+            <div class="mail2">Bla b la bla bla ...</div>
+          </div>
+        </div>
+        <!--/contact-->
+
+        <div class="contact">
+          <div class="picture2"><img src="<%=profile.photo%>" alt="<%=profile.name%>"></div>
+          <div class="contact_info">
+            <div class="name2">Contacto 1<span class="offline"></span></div>
+            <div class="mail2">Bla b la bla bla ...</div>
+          </div>
+        </div>
+        <!--/contact-->
+
+        <div class="contact">
+          <div class="picture2"><img src="<%=profile.photo%>" alt="<%=profile.name%>"></div>
+          <div class="contact_info">
+            <div class="name2">Contacto 1<span class="offline"></span></div>
+            <div class="mail2">Bla b la bla bla ...</div>
+          </div>
+        </div>
+        <!--/contact-->
+
+      </div>
+      <!--/contacts-->
+    </div>
+    <!--/col1-->
+
+    <div class="col2">
+      <!-- <h1><%= title %></h1>
+        <h2><%=profile.name%></h2>-->
+      <div class="col2_top">
+        <div class="searchbar"><input type="text" placeholder="Buscar..."></div>
+        <div class="icons">
+          <i class="fas fa-sync-alt"></i>
+          <i class="far fa-trash-alt"></i>
+        </div>
+      </div>
+      <div class="email_list">
+        <% for (var e in emails) {
+            var email = emails[e];%>
+
+        <div class="email <%= e == locals.id ? 'selected':''%>">
+          <a href="/mail/<%=e%>">
+            <div class="email_header">
+              <div class="name"><%= email.name %></div>
+              <div class="date"><%= email.date %></div>
+            </div>
+            <div class="email_main">
+              <div class="email_actions">
+                <i class="far fa-square"></i>
+                <i class="far fa-star"></i>
+              </div>
+              <div class="email_content">
+                <div class="issue"><%= email.issue %></div>
+                <div class="description"><%= email.description %></div>
+                <div class="documents">
+                  <div class="document">
+                    <div class="icon"></div>
+                    <div class="name">archivo.ext</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!--/email-->
+
+        <% } %>
+      </div>
+      <!--/email_list-->
+    </div>
+    <!--/col2-->
+
+    <div class="col3">
+      <div class="mail_content">
+        <% if (locals.id !== undefined) {%>
+        <%- emails[locals.id].content %>
+        <% } else { %>
         <div>No has seleccionado ningún correo</div>
-	<% } %>
-	</div>
-  </body>
+        <% } %>
+      </div>
+    </div>
+    <!--/col3-->
+  </div>
+  <!--/wrapper-->
+
+</body>
+
 </html>

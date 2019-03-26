@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>Gfake</h1>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <div class="login">
+    <div class="logo"><img src="../images/logos/csic_completo.png" alt="Logotype"></div>
     <form method="post" action="/mail">
-    	<div class="form-field">
-	    	<label for="email">E-mail</label>
-	    	<input type="email" name="email" id="email" value="dr@upm.es"/>
-    	</div>
-    	<div class="form-field">
-	    	<label for="email">Password</label>
-	    	<input type="password" name="password" id="password" value="1234"/>
-    	</div>
-    	<button type="submit">Login</button>
+      <div class="form-field">
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" value="dr@upm.es" />
+      </div>
+      <div class="form-field">
+        <label for="email">Contraseña</label>
+        <input type="password" name="password" id="password" value="1234" />
+      </div>
+      <button class="button1" type="submit">Acceder</button>
     </form>
-  </body>
+  </div>
+
+</body>
+
 </html>
