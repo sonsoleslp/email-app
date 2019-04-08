@@ -7,6 +7,7 @@ $typecolor: #292F33
 $contrast-color: #95D9C3
 $background: white
 
+
 /* --------- TYPOGRAPHY ---------*/
 $typeface: 'Roboto', sans-serif
 
@@ -71,7 +72,9 @@ a
   margin: 0
 
 h1
-  color: blue
+  font-size: 1.2rem
+  font-weight: 600
+  margin: 0
 
 h2
   font-size: .9rem
@@ -262,7 +265,7 @@ input
     .searchbar
       width: 100%
       display: flex
-      margin: 1.5rem 0 0 0
+      margin: 1rem 0 0 0
       input
         width: 80%
         padding: .4rem 1rem .4rem 1rem
@@ -270,7 +273,7 @@ input
       width: 100%
       padding: 1.7rem 0 0 1.5rem
       i
-        margin: 0 1rem 0 0
+        margin: 0 .4rem 0 0
         padding: .5rem
         border-radius: 50%
         font-size: .8rem
@@ -282,14 +285,21 @@ input
     flex-flow: column wrap
     overflow: auto
     margin: 0 .3rem 0 0
+    .selected
+      box-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.4)
+      background-color: lighten($secundary-color, 18)
+    .filtered
+      background-color: blue
     .email
-      border-bottom: solid .5px $secundary-color
-      padding: .6rem .8rem 1rem .6rem
+      border-color: $secundary-color
+      border-style: solid
+      border-width: 0 .5px .5px 0
+      padding: .7rem .8rem 1rem .6rem
       .email_header
         display: flex
         flex-flow: row wrap
         color: $typecolor
-        font-size: .6rem
+        font-size: .7rem
         font-weight: 500
         .name
           width: 50%
@@ -299,12 +309,14 @@ input
       .email_main
         display: flex
         flex-flow: row wrap
-        margin: .6rem 0 0 0
+        margin: .9rem 0 0 0
         color: $typecolor
         .email_actions
           width: 12%
           display: flex
           color: lighten($typecolor, 60)
+          i
+            font-size: .8rem
 
         .email_content
           width: 80%
@@ -333,13 +345,116 @@ input
               width: 13px
       &:hover
         box-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.4)
-        background-color: lighten($secundary-color, 20)
+        background-color: lighten($secundary-color, 11)
 
 
 /* --------- col3 ---------*/
 .col3
   width: 50%
   background-color: $secundary-color
+  padding: 2rem 1.4rem 2rem 1.4rem
+  .mail_header
+    margin: .0 0 .5rem 0
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-between
+    .mail_issue
+      margin: 0
+      display: flex
+      flex-flow: row wrap
+      align-items: center
+      i
+        font-size: .95rem
+        margin: 0 .4rem 0 0
+        color: $background
+    .mail_icons
+      margin: 0
+      i
+        color: darken($secundary-color, 35)
+        background-color: $background
+        border-radius: 3px 3px 3px 3px
+        padding: .5rem
+        font-size: .8rem
+        margin: 0 0 0 .3rem
+        cursor: pointer
+        &:hover
+          color: $primary-color
+          transition: .3s
+  .mail_main
+    .mail_top
+      padding: 1.5rem 1rem 1.5rem 1rem
+      margin: 0 0 1.6px 0
+      width: 100%
+      border-radius: 7px 7px 0px 0px
+      background-color: $background
+      display: flex
+      flex-flow: row wrap
+      justify-content: space-between
+      .info
+        margin: 0
+        display: flex
+        align-items: center
+        .profile_img
+          +profile1
+          margin: 0
+        .contact
+          margin: 0 0 0 .7rem
+          .name
+            display: flex
+            align-items: center
+            span
+              margin: 0 0 0 .4rem
+          .recipient
+            margin: .3rem 0 0 0
+      .date
+        margin: 0
+    .mail_content
+      background-color: $background
+      border-radius: 0px 0px 7px 7px
+      padding: 3rem 3.5rem 3rem 4rem
+      overflow: auto
+      height: 70vh
+      font-size: .9rem
+      line-height: 1.35rem
+      .mail_actions
+        width: 43%
+        display: flex
+        flex-flow: row wrap
+        margin: 5rem 0 0 0
+        justify-content: space-between
+        font-size: .8rem
+        .action
+          margin: 0
+          border: solid .5px $secundary-color
+          padding: .5rem .8rem .5rem .8rem
+          cursor: pointer
+          border-radius: 5px
+          i
+            margin: 0 .6rem 0 0
+          &:hover
+            background-color: lighten($secundary-color, 15)
+  .no_mail
+    margin: 0
+    display: flex
+    flex-flow: column nowrap
+    align-items: center
+    padding: 10rem 0 0 0
+    .nm_img
+      margin: 0
+      width: 50%
+      svg
+        path
+          fill: lighten($secundary-color, 6)
+
+    .nm_text
+      margin: 0
+      color: darken($secundary-color, 25)
+      font-size: .8rem
+
+path
+  .st0
+    fill: red
+
 
 /* --------- SCROLLBAR ---------*/
 ::-webkit-scrollbar
@@ -354,9 +469,12 @@ input
   border-radius: 5px
 /* Handle */
 ::-webkit-scrollbar-thumb
-  background: $secundary-color
+  background: lighten($secundary-color, 8)
   border-radius: 5px
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover
-  background: darken($secundary-color, 10)
+  background: darken($secundary-color, 5)
+
+
+/* --------- SVG ---------*/

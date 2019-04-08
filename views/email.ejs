@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="icon" type="image/x-icon" href="../images/logos/favicon.ico" />
 </head>
 
 <body>
@@ -137,15 +138,59 @@
     <!--/col2-->
 
     <div class="col3">
-      <div class="mail_content">
-        <% if (locals.id !== undefined) {%>
-        <%- emails[locals.id].content %>
-        <% } else { %>
-        <div>No has seleccionado ningún correo</div>
-        <% } %>
+      <% if (locals.id !== undefined) {%>
+      <div class="mail_header">
+        <div class="mail_issue"><span><i class="far fa-star"></i></span>
+          <h1><%- emails[locals.id].issue %></h1>
+        </div>
+        <div class="mail_icons">
+          <i class="far fa-clock"></i>
+          <i class="far fa-trash-alt"></i>
+          <i class="far fa-bookmark"></i>
+          <i class="fas fa-inbox"></i>
+        </div>
       </div>
+      <div class="mail_main">
+        <div class="mail_top">
+          <div class="info">
+            <div class="profile_img">
+              <img src="<%- emails[locals.id].picture %>" alt="">
+            </div>
+            <div class="contact">
+              <div class="name">
+                <h2><%- emails[locals.id].name %></h2><span>- <%- emails[locals.id].from %> -</span>
+              </div>
+              <div class="recipient">
+                Para: <%=profile.email%>
+              </div>
+            </div>
+          </div>
+          <div class="date"><%- emails[locals.id].date %></div>
+        </div>
+        <div class="mail_content"><%- emails[locals.id].content %>
+          <div class="mail_actions">
+            <div class="action"><span><i class="fas fa-reply"></i></span>Responder</div>
+            <div class="action"><span><i class="fas fa-share"></i></span>Reenviar</div>
+          </div>
+        </div>
+      </div>
+      <!--/mail_content-->
+      <% } else { %>
+      <div class="no_mail">
+        <div class="nm_img">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 68.5">
+            <path
+              d="M13.1 7.738c-.4 0-.7.1-1 .2l36.2 32.3c.9.8 2.6.8 3.5 0L88 7.938c-.3-.1-.7-.2-1-.2H13.1zm-3.9 2.9c-.1.3-.2.7-.2 1.1v44c0 .4.1.7.2 1.1l26.8-22.2-26.8-24zm81.6 0l-26.8 24 26.8 22.2c.1-.3.2-.7.2-1.1v-44c0-.4-.1-.7-.2-1.1zM39 37.338l-26.9 22.2c.3.1.6.2 1 .2h73.8c.4 0 .7-.1 1-.2L61 37.338l-6.6 5.9c-2.5 2.2-6.3 2.2-8.8 0l-6.6-5.9z"
+              fill="#d3dde4" /></svg>
+        </div>
+        <div class="nm_text">No has seleccionado ningún correo</div>
+      </div>
+      <% } %>
+      <!--/mail_main-->
     </div>
     <!--/col3-->
+
+
   </div>
   <!--/wrapper-->
 
