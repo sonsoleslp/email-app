@@ -178,7 +178,7 @@ input
       margin: 0
       +profile1
     .user_info
-      width: 70%
+      width: 130px
       margin: 0 0 0 .8rem
       .name1
         display: flex
@@ -281,7 +281,7 @@ input
         &:hover
           background-color: lighten($secundary-color, 13)
   .email_list
-    height: 610px
+    height: 80vh
     flex-flow: column wrap
     overflow: auto
     margin: 0 .3rem 0 0
@@ -332,11 +332,12 @@ input
           .document
             margin: 0
             padding: .2rem
-            width: 30%
+            width: 100px
             border: solid .5px $secundary-color
             border-radius: 20px
             display: flex
             flex-flow: row wrap
+            justify-content: flex-start
             align-items: center
             .icon
               background-color: orange
@@ -417,14 +418,14 @@ input
       font-size: .9rem
       line-height: 1.35rem
       .mail_actions
-        width: 43%
+        width: 100%
         display: flex
         flex-flow: row wrap
         margin: 5rem 0 0 0
-        justify-content: space-between
+        justify-content: flex-start
         font-size: .8rem
         .action
-          margin: 0
+          margin: 0 1rem 0 0
           border: solid .5px $secundary-color
           padding: .5rem .8rem .5rem .8rem
           cursor: pointer
@@ -475,6 +476,3 @@ path
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover
   background: darken($secundary-color, 5)
-
-
-/* --------- SVG ---------*/
